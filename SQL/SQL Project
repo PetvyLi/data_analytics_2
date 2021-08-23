@@ -1,0 +1,46 @@
+CREATE TABLE video(
+	ID serial PRIMARY KEY, 
+	video_title varchar(255) NOT NULL, 
+	video_length varchar (255) NOT NULL,
+	URL varchar (255) NOT NULL
+);
+
+CREATE TABLE
+
+Query returned successfully in 55 msec.
+
+INSERT INTO video(video_title, video_length, URL)
+VALUES 
+	('Creating PostgreSQL tables with pgAdmin', '240', 'https://youtu.be/z3imgtVxNCs'),
+	('Inside the mind of a master procrastinator | Tim Urban', '1200', 'https://youtu.be/1otF0N6surM'),
+	('Life Lessons From 100-Year-Olds', '780', 'https://youtu.be/9AThycGCakk')
+	;
+	SELECT * FROM video
+
+CREATE TABLE reviewers (
+ID serial PRIMARY KEY, 
+	user_name varchar(255) NOT NULL, 
+	rating int,
+	text_review varchar (55) NOT NULL
+);
+
+CREATE TABLE
+
+Query returned successfully in 64 msec.
+
+INSERT INTO reviewers (user_name, rating, text_review)
+VALUES 
+('Adam', '0', 'Boring'),
+('John', '5', 'Loved it!');
+
+SELECT * FROM reviewers;
+
+#JOIN 
+
+SELECT * FROM reviewers 
+FULL OUTER JOIN video 
+ON reviewers.name = video.name
+
+SELECT * FROM video
+INNER JOIN reviewers 
+ON video.name = reviewers.name
